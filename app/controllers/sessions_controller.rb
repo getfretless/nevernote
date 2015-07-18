@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by username: user_params[:username]
     if user.present? && user.authenticate(user_params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, :'alert-success' => t('session.flash.create.success')
+      redirect_to root_url, flash: { :'alert-success' => t('session.flash.create.success') }
     else
       @user = User.new username: user_params[:username]
       flash.now[:'alert-danger'] = t('session.flash.create.failure')
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :'alert-success' => t('session.flash.destroy.success')
+    redirect_to root_url, flash: { :'alert-success' => t('session.flash.destroy.success') }
   end
 
   private
