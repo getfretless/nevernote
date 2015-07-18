@@ -14,7 +14,7 @@
               Nevernote
               .user-links
                 - if current_user.present?
-                  Signed in as #{current_user.display_name}.
+                  Signed in as #{link_to current_user.display_name, edit_user_path(current_user)}.
                   = link_to 'Logout', logout_path, method: :delete
                 - else
                   = link_to 'Sign Up', sign_up_path

@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'haml'
 gem 'font-awesome-sass'
 gem 'bootsy'
+gem 'zeroclipboard-rails'
 gem 'sanitize'
 
 group :development, :test do

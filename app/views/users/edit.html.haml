@@ -1,0 +1,25 @@
+%h3 User Profile
+= form_for @user do |f|
+  %p
+    %label Username
+    %br/
+    = f.object.username
+  %p
+    %label API Key
+    %br/
+    = f.text_field :api_key, readonly: true, style: 'vertical-align: middle'
+    %button#api_clip_button.btn.btn-default{"data-clipboard-target" => "user_api_key", "data-clipboard-text" => "Copy me!", :title => "Copy API Key to clipboard.", :type => "button"}
+      %i.fa.fa-clipboard
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.label :password, 'New Password'
+    %br/
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation, 'Re-type New Password'
+    %br/
+    = f.password_field :password_confirmation
+  = f.submit 'Save Changes', class: 'btn btn-default'
