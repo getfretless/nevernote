@@ -15,6 +15,7 @@ gem 'haml'
 gem 'font-awesome-sass'
 gem 'bootsy'
 gem 'zeroclipboard-rails'
+gem 'rack-cors', require: 'rack/cors'
 gem 'sanitize'
 
 group :development, :test do
