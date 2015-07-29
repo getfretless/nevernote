@@ -20,6 +20,24 @@ class API::V1::NotesController < API::V1::APIController
     end
   end
 
+  def update
+    @note = current_api_user.notes.find params[:id]
+    if @note.update(note_params)
+      render :show
+    else
+      render json: @note.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @note = current_api_user.notes.find params[:id]
+    if @note.destroy
+      render json: { message: t('api.note.destroy.success') }
+    else
+      render json: @note.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def note_params

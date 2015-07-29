@@ -27,3 +27,7 @@ en:
     placeholder:
       title: "Title your note"
       body: "Just start typing..."
+  api:
+    note:
+      destroy:
+        success: "Deleted successfully"
