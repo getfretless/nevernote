@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :notes, except: [:new, :edit]
+      resource :session, only: :create
     end
   end
 end
