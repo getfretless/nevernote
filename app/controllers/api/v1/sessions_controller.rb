@@ -5,7 +5,7 @@ class API::V1::SessionsController < API::V1::APIController
     if @user.present? && @user.authenticate(user_params[:password])
       render
     else
-      render json: { error: t('session.flash.create.failure'), status: :unprocessable_entity }
+      render json: { error: t('session.flash.create.failure') }, status: :unprocessable_entity
     end
   end
 
