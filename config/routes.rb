@@ -15,5 +15,9 @@ Rails.application.routes.draw do
       resources :notes, except: [:new, :edit]
       resource :session, only: :create
     end
+    namespace :v2 do
+      resources :notes, except: [:new, :edit]
+      resource :session, only: :create
+    end
   end
 end

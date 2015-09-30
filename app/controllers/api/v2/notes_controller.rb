@@ -1,5 +1,5 @@
-class API::V1::NotesController < API::V1::APIController
-  before_action :authorize_api_key
+class API::V2::NotesController < API::V2::APIController
+  before_action :authorize_token
 
   def index
     @notes = current_api_user.notes.ordered
